@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2021 The Stdlib Authors.
@@ -16,24 +16,17 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
-
-var objectKeys = require( '@stdlib/utils-keys' );
-var hasOwnProp = require( '@stdlib/assert-has-own-property' );
-
-
-// MAIN //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
 /**
 * Returns the common own property names of two or more objects.
 *
-* @param {*} obj1 - first object
-* @param {*} obj2 - second object
-* @param {...*} [obj] - additional objects
-* @throws {Error} must provide at least two objects
-* @returns {(StringArray|EmptyArray)} common keys
+* @param obj1 - first object
+* @param obj2 - second object
+* @param obj - additional objects
+* @returns common keys of objects
 *
 * @example
 * var obj = {
@@ -69,38 +62,9 @@ var hasOwnProp = require( '@stdlib/assert-has-own-property' );
 * var keys = commonKeys( obj1, obj2, obj3 );
 * // returns [ 'a' ]
 */
-function commonKeys() {
-	var nargs;
-	var keys;
-	var arg;
-	var ptr;
-	var N;
-	var i;
-	var j;
-
-	nargs = arguments.length;
-	if ( nargs < 2 ) {
-		throw new Error( 'insufficient arguments. Must provide at least two objects.' );
-	}
-	keys = objectKeys( arguments[ 0 ] );
-	N = keys.length;
-
-	for ( i = 1; i < nargs; i++ ) {
-		arg = arguments[ i ];
-		ptr = 0;
-		for ( j = 0; j < N; j++ ) {
-			if ( hasOwnProp( arg, keys[ j ] ) ) {
-				keys[ ptr ] = keys[ j ];
-				ptr += 1;
-			}
-		}
-		N = ptr;
-	}
-	keys.length = N;
-	return keys;
-}
+declare function commonKeys( obj1: any, obj2: any, ...obj: Array<any> ): Array<string>;
 
 
 // EXPORTS //
 
-module.exports = commonKeys;
+export = commonKeys;
