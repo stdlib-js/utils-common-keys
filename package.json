@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/utils-common-keys",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Return the common own property names of two or more objects.",
   "license": "Apache-2.0",
   "author": {
@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "@stdlib/assert-has-own-property": "^0.1.1",
-    "@stdlib/types": "^0.2.0",
-    "@stdlib/utils-keys": "^0.1.0"
+    "@stdlib/types": "^0.3.1",
+    "@stdlib/utils-keys": "^0.2.0"
   },
   "devDependencies": {
     "@stdlib/assert-is-empty-array": "^0.1.1",
